@@ -50,9 +50,9 @@ const GetStartedScreen = () => {
   }
 
   const onSubmit = () => {
-    dispatch(toggleFirstOpen(true))
-    saveLocalStorage({ key: "firstOpen", value: false })
-    navigation.navigate(ScreenName.Login)
+    dispatch(toggleFirstOpen(false))
+    updateLocalStorage({ key: "appInfo", value: { firstOpen: false } })
+    navigation.navigate(ScreenName.Authenticate)
   }
 
   const renderItem = ({ item, index }: RenderItemProps) => (

@@ -4,8 +4,14 @@ export enum ScreenName {
   Home = 'Home',
   GetStart = 'GetStart',
   Loading = 'Loading',
-  Login = 'Login',
-  Register = 'Register',
+  Authenticate = 'Authenticate',
+  AddDevice = 'AddDevice',
+  Menu = 'Menu',
+  DisplaySetting = 'DisplaySetting',
+
+  // Stack
+  HomeStack = 'HomeStack',
+  MenuStack = 'MenuStack',
 }
 
 export type RootStackParamList = {
@@ -13,4 +19,7 @@ export type RootStackParamList = {
 };
 
 export type NavigationPropStack = NavigationProp<RootStackParamList>;
-export const screenTitle: Record<ScreenName, string> = {} as Record<ScreenName, string>;
+export const screenTitle: Record<ScreenName, string> = {} as Record<
+  ScreenName,
+  string
+>;

@@ -27,8 +27,9 @@ export const setLoading = (isLoading: boolean) => ({
   payload: isLoading,
 });
 
-export const toggleDarkMode = () => ({
+export const toggleDarkMode = (darkMode:boolean) => ({
   type: TOGGLE_DARK_MODE,
+  payload: darkMode,
 });
 
 export const toggleFirstOpen = (firstOpen: boolean) => ({

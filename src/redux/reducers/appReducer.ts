@@ -29,7 +29,7 @@ const appReducer = (state = initData, action: Action): AppState => {
     case TOGGLE_FIRST_OPEN:
       return {...state, firstOpen: action.payload};
     case TOGGLE_DARK_MODE:
-      return {...state, darkMode: !state.darkMode};
+      return {...state, darkMode:  action.payload};
     default:
       return state;
   }
