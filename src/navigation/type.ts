@@ -8,10 +8,12 @@ export enum ScreenName {
   AddDevice = 'AddDevice',
   Menu = 'Menu',
   DisplaySetting = 'DisplaySetting',
+  Account = "Account",
 
   // Stack
   HomeStack = 'HomeStack',
   MenuStack = 'MenuStack',
+  AddStack = 'AddStack',
 }
 
 export type RootStackParamList = {

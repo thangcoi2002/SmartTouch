@@ -9,6 +9,7 @@ import store from '~/redux/store';
 function App(): React.JSX.Element {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+
       <Provider store={store}><Navigation /></Provider>
     </GestureHandlerRootView>
   )

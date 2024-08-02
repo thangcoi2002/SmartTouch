@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import Constants from '~/common/Constant';
 
 export const styles = StyleSheet.create({
@@ -35,7 +35,6 @@ export const styles = StyleSheet.create({
 
   wrapperContent: {
     height: '100%',
-    backgroundColor: Constants.grayOpacity,
     borderRadius: 10,
     marginBottom: 10,
     marginTop: -20,
@@ -56,15 +55,18 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    backgroundColor: Constants.white,
     shadowColor: Constants.black,
     shadowOpacity: 0.8,
-    elevation: 3,
+    elevation: 1,
+    ...Platform.select({
+      ios:{
+    shadowOpacity: 0.06,
+      }
+    })
   },
   txtMenu: {
     marginTop: 4,
     fontWeight: '600',
-    color: Constants.gray,
   },
 
   btnLogout: {

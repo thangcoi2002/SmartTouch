@@ -1,8 +1,12 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import Constants from '~/common/Constant';
 import { Platform } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from '~/redux/reducers/rootReducer';
 
 export const TabOptions = (show: boolean): BottomTabNavigationOptions => {
+  const {darkMode} = useSelector((state: RootState) => state.appReducer)
+
   return {
     tabBarLabel: () => null,
     headerShown: false,
@@ -15,8 +19,9 @@ export const TabOptions = (show: boolean): BottomTabNavigationOptions => {
       bottom: 25,
       left: 20,
       right: 20,
+      paddingBottom: -30,
       elevation: 5,
-      backgroundColor: Constants.white,
+      backgroundColor: darkMode? Constants.darkGrayOpacity :Constants.white,
       borderRadius: 20,
       shadowColor: 'rgba(0, 0, 0, 0.3)',
       shadowOffset: { width: 0, height: 2 },
@@ -26,7 +31,7 @@ export const TabOptions = (show: boolean): BottomTabNavigationOptions => {
         ios: {
           shadowColor: 'rgba(0, 0, 0, 0.3)',
           shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.8,
+          shadowOpacity: 0.3,
           shadowRadius: 2,
         },
         android: {
