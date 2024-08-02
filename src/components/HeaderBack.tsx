@@ -3,9 +3,10 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import VectorIcon from "./VectorIcon";
 import { linkImage } from "~/utils/linkImage";
+import Constants from "~/common/Constant";
 
 interface HeaderBackProps {
-    title: string;
+    title?: string;
 }
 
 const HeaderBack: React.FC<HeaderBackProps> = ({ title }) => {
@@ -16,32 +17,30 @@ const HeaderBack: React.FC<HeaderBackProps> = ({ title }) => {
     };
 
     return (
-        <View style={styles.container}>
-            <TouchableOpacity onPress={goBack}>
-                <Image source={linkImage('IC_Back')} style={styles.icon} />
-            </TouchableOpacity>
+        <TouchableOpacity onPress={goBack} style={styles.container} activeOpacity={1}>
+            <Image source={linkImage('IC_Back')} style={styles.icon} />
             <Text style={styles.title}>{title}</Text>
-
-        </View>
+        </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        justifyContent: "space-between",
         alignItems: "center",
-        paddingHorizontal: 16,
-        paddingVertical: 12,
+        padding: 10
     },
     title: {
         fontSize: 18,
         fontWeight: "bold",
+        marginLeft: 10,
+        color: Constants.black
     },
     icon: {
         width: 20,
         height: 20,
         resizeMode: "contain",
+        padding: 10
     }
 });
 
