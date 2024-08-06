@@ -1,20 +1,23 @@
 export const darkTheme = {
   mainColor: '#1B232A',
-  TextColor: '#000',
-  headerColor:"#333"
+  TextColor: '#ffffff',
+  headerColor:"#333",
+  borderColor: '#xD1D5DB10',
 };
 
 export const lightTheme = {
   mainColor: '#ffffff',
-  TextColor: '#fff',
-  headerColor:"#C1C7CD70"
+  TextColor: '#000000',
+  headerColor:"#C1C7CD70",
+  borderColor: '#D1D5DB30',
 };
 
 const Constants = {
   mainColor: '#2A9D8F',
 
   borderGray: '#D1D5DB',
-  borderGrayOpacity: '#D1D5DB30',
+  borderGrayOpacity10: '#D1D5DB10',
+  borderGrayOpacity30: '#D1D5DB30',
   white: '#fff',
   whiteGray: '#C1C7CD',
   black: '#000',

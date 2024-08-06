@@ -8,7 +8,8 @@ export enum ScreenName {
   AddDevice = 'AddDevice',
   Menu = 'Menu',
   DisplaySetting = 'DisplaySetting',
-  Account = "Account",
+  Account = 'Account',
+  EditProfile = 'EditProfile',
 
   // Stack
   HomeStack = 'HomeStack',

@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     elevation: 1,
     ...Platform.select({
       ios:{
-    shadowOpacity: 0.06,
+    shadowOpacity: 0.1,
       }
     })
   },
