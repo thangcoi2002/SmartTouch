@@ -1,0 +1,18 @@
+{
+  "logout": "Đăng xuất",
+  "signUp": "Đăng ký",
+  "signIn": "Đăng nhập",
+  "password": "Mật khẩu",
+  "rePassword": "Nhập lại mật khẩu",
+  "fullName": "Họ và tên",
+  "email": "Địa chỉ email",
+  "address": "Địa chỉ",
+  "phone": "Số điện thoại",
+  "account": "Tài khoản",
+  "display": "Màn hình",
+  "managerHome": "Quản lý nhà",
+  "support": "Hỗ trợ",
+  "settings": "Cài đặt",
+  "darkMode": "Chế độ tối",
+  "language": "Ngôn ngữ"
+}

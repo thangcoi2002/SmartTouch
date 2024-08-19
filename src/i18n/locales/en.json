@@ -1,0 +1,18 @@
+{
+  "logout": "Log out",
+  "signUp": "Sign up",
+  "signIn": "Sign in!",
+  "password": "Password",
+  "rePassword": "Re-password",
+  "fullName": "Full name",
+  "email": "Email address",
+  "address": "Address",
+  "phone": "Phone number",
+  "account": "Account",
+  "display": "Display",
+  "managerHome": "Manager home",
+  "support": "Support",
+  "settings": "Settings",
+  "darkMode": "Dark mode",
+  "language": "Language"
+}
