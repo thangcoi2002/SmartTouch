@@ -2,13 +2,13 @@ import {StyleSheet} from 'react-native';
 import Constants from '~/common/Constant';
 
 export const styles = StyleSheet.create({
-  container:{
-    paddingHorizontal: 10
+  container: {
+    paddingHorizontal: 10,
   },
-  label:{
+  label: {
     color: Constants.black,
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   wrapper: {
     flexDirection: 'row',
@@ -16,7 +16,17 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderBottomWidth: 2,
     paddingVertical: 10,
-    paddingLeft:4,
-    marginTop: 10
+    paddingLeft: 4,
+    marginTop: 10,
+  },
+  boxLng: {
+    flexDirection: 'row',
+  },
+  btnLng: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    margin: 2,
+    borderRadius: 8,
+    borderWidth: 1,
   },
 });

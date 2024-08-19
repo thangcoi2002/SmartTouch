@@ -5,6 +5,7 @@ import {
   TOGGLE_DARK_MODE,
   REMOVE_CURRENT_USER,
   TOGGLE_FIRST_OPEN,
+  SET_LANGUAGE,
 } from '../actionTypes';
 import {Action, AppState, User} from '../types';
 
@@ -14,6 +15,7 @@ const initData: AppState = {
   isLoading: true,
   darkMode: false,
   firstOpen: true,
+  language: 'vi',
 };
 
 const appReducer = (state = initData, action: Action): AppState => {
@@ -29,7 +31,9 @@ const appReducer = (state = initData, action: Action): AppState => {
     case TOGGLE_FIRST_OPEN:
       return {...state, firstOpen: action.payload};
     case TOGGLE_DARK_MODE:
-      return {...state, darkMode:  action.payload};
+      return {...state, darkMode: action.payload};
+    case SET_LANGUAGE:
+      return {...state, language: action.payload};
     default:
       return state;
   }

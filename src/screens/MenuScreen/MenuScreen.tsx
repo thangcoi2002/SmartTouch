@@ -6,6 +6,9 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import {useTranslation} from 'react-i18next';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+
 import {linkImage} from '~/utils/linkImage';
 import {styles} from './styles';
 import {useDispatch, useSelector} from 'react-redux';
@@ -13,11 +16,11 @@ import {RootState} from '~/redux/reducers/rootReducer';
 import VectorIcon from '~/components/VectorIcon';
 import {updateLocalStorage} from '~/common/LocalStorage';
 import {removeCurrentUser} from '~/redux/action/appActions';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList, ScreenName} from '~/navigation';
 import Constants, {darkTheme, lightTheme} from '~/common/Constant';
 
 const MenuScreen = () => {
+  const {t} = useTranslation();
   const {currentUser, darkMode} = useSelector(
     (state: RootState) => state.appReducer,
   );
@@ -77,7 +80,7 @@ const MenuScreen = () => {
                   color: darkMode ? Constants.white : Constants.gray,
                 },
               ]}>
-              Account
+              {t('account')}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -103,7 +106,7 @@ const MenuScreen = () => {
                   color: darkMode ? Constants.white : Constants.gray,
                 },
               ]}>
-              Display
+              {t('display')}
             </Text>
           </TouchableOpacity>
         </View>
@@ -131,7 +134,7 @@ const MenuScreen = () => {
                   color: darkMode ? Constants.white : Constants.gray,
                 },
               ]}>
-              Manager Home
+              {t('managerHome')}
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -157,13 +160,13 @@ const MenuScreen = () => {
                   color: darkMode ? Constants.white : Constants.gray,
                 },
               ]}>
-              Support
+              {t('support')}
             </Text>
           </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={styles.btnLogout} onPress={logOut}>
-          <Text style={styles.txtLogout}>Log Out</Text>
+          <Text style={styles.txtLogout}>{t('logout')}</Text>
         </TouchableOpacity>
       </View>
     </View>

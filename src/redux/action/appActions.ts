@@ -1,4 +1,4 @@
-import {AppState, User} from '../types';
+import {User} from '../types';
 import {
   SET_CURRENT_USER,
   SET_TOKEN,
@@ -6,6 +6,7 @@ import {
   TOGGLE_DARK_MODE,
   REMOVE_CURRENT_USER,
   TOGGLE_FIRST_OPEN,
+  SET_LANGUAGE,
 } from '../actionTypes';
 
 export const setCurrentUser = (user: User) => ({
@@ -27,7 +28,7 @@ export const setLoading = (isLoading: boolean) => ({
   payload: isLoading,
 });
 
-export const toggleDarkMode = (darkMode:boolean) => ({
+export const toggleDarkMode = (darkMode: boolean) => ({
   type: TOGGLE_DARK_MODE,
   payload: darkMode,
 });
@@ -35,4 +36,9 @@ export const toggleDarkMode = (darkMode:boolean) => ({
 export const toggleFirstOpen = (firstOpen: boolean) => ({
   type: TOGGLE_FIRST_OPEN,
   payload: firstOpen,
+});
+
+export const setLanguage = (language: string) => ({
+  type: SET_LANGUAGE,
+  payload: language,
 });

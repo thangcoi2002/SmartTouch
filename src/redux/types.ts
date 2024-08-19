@@ -13,6 +13,7 @@ export interface AppState {
   isLoading: boolean;
   darkMode: boolean;
   firstOpen: boolean;
+  language: string;
 }
 
 export interface Action<T = any> {
