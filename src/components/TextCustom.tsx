@@ -9,7 +9,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import VectorIcon from './VectorIcon';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Constants from '~/common/Constant';
 
 interface TextCustomProps {
@@ -24,7 +24,6 @@ interface TextCustomProps {
   textInputStyle?: StyleProp<TextStyle>;
 }
 
-
 const TextCustom: React.FC<TextCustomProps> = ({
   value,
   onChangeText,
@@ -32,7 +31,7 @@ const TextCustom: React.FC<TextCustomProps> = ({
   label,
   password,
   keyboardType,
-  Icon
+  Icon,
 }) => {
   const [showPassword, setShowPassword] = useState(password);
   let keyBoard: KeyboardTypeOptions = 'default';
@@ -59,6 +58,7 @@ const TextCustom: React.FC<TextCustomProps> = ({
         style={styles.textInput}
         secureTextEntry={showPassword}
         keyboardType={keyBoard}
+        placeholderTextColor={Constants.gray}
       />
 
       {password && (
@@ -74,25 +74,24 @@ const TextCustom: React.FC<TextCustomProps> = ({
       )}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: Constants.borderGray,
-    borderWidth: 1,
     borderRadius: 10,
     height: 53,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
-    backgroundColor: "#fff",
-    marginVertical: 2
+    backgroundColor: '#161C22',
+    marginVertical: 2,
   },
   textInput: {
     width: '90%',
     fontSize: 16,
     color: '#666',
-    overflow: "hidden"
+    overflow: 'hidden',
+    marginLeft: 10,
   },
   btnShowPass: {
     position: 'absolute',

@@ -53,7 +53,7 @@ const RegisterScreen = () => {
 
         <Text style={styles.label}>{t('password')}</Text>
         <TextCustom
-          label={t('userName')}
+          label={t('password')}
           name={'password'}
           onChangeText={onChangeText}
           password={true}

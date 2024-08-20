@@ -7,7 +7,7 @@ import {RootStackParamList, ScreenName} from '~/navigation';
 import {RootState} from '~/redux/reducers/rootReducer';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import Constants, {darkTheme, lightTheme} from '~/common/Constant';
+import {darkTheme, lightTheme} from '~/common/Constant';
 import {linkImage} from '~/utils/linkImage';
 import VectorIcon from '~/components/VectorIcon';
 
@@ -43,11 +43,26 @@ const AccountScreen = () => {
             ? darkTheme.borderColor
             : lightTheme.borderColor,
         },
-      ]} onPress={() => navigation.navigate(ScreenName.EditProfile)}>
-      <Text  style={[{color:darkMode?darkTheme.TextColor:lightTheme.TextColor}]}>{item.title}</Text>
+      ]}
+      onPress={() => navigation.navigate(ScreenName.EditProfile)}>
+      <Text
+        style={[
+          {color: darkMode ? darkTheme.TextColor : lightTheme.TextColor},
+        ]}>
+        {item.title}
+      </Text>
       <View style={styles.flexCenter}>
-        <Text style={[{color:darkMode?darkTheme.TextColor:lightTheme.TextColor}]}>{item.value}</Text>
-        <VectorIcon.MaterialVectorIcon name='keyboard-arrow-right' size={20} color={darkMode?darkTheme.TextColor:lightTheme.TextColor}/>
+        <Text
+          style={[
+            {color: darkMode ? darkTheme.TextColor : lightTheme.TextColor},
+          ]}>
+          {item.value}
+        </Text>
+        <VectorIcon.MaterialVectorIcon
+          name="keyboard-arrow-right"
+          size={20}
+          color={darkMode ? darkTheme.TextColor : lightTheme.TextColor}
+        />
       </View>
     </TouchableOpacity>
   );

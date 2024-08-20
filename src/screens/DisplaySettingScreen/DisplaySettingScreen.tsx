@@ -1,4 +1,4 @@
-import {Button, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {updateLocalStorage} from '~/common/LocalStorage';
 import HeaderBack from '~/components/HeaderBack';

@@ -23,6 +23,7 @@ const Constants = {
   black: '#000',
   gray: '#777777',
   grayOpacity: '#F5F7F9',
+  grayOpacity30: '#77777730',
   darkBlue: '#363062',
   darkGray: '#1B232A',
   darkGrayOpacity: '#161C22',

@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import Constants from '~/common/Constant';
 
 export const styles = StyleSheet.create({
@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Constants.mainColor,
     padding: 30,
-    paddingBottom: 0
+    paddingBottom: Platform.OS === 'ios' ? 20 : 0,
+    paddingTop: Platform.OS === 'ios' ? 100 : 30,
   },
   logo: {width: 'auto', height: 100, resizeMode: 'contain'},
   groupBtn: {
