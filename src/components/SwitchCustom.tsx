@@ -1,6 +1,6 @@
 import React from "react"
 import { Switch } from "react-native"
-import Constants from "~/common/Constant"
+import colors from "~/constants/colors"
 
 interface SwitchCustomProps {
   onChange: () => void,
@@ -13,9 +13,9 @@ const SwitchCustom: React.FC<SwitchCustomProps> = ({onChange,value}) => {
     <Switch
     onChange={onChange}
     value={value}
-    trackColor={{false: '#767577', true: Constants.greenDark}}
+    trackColor={{false: '#767577', true: colors.greenDark}}
     ios_backgroundColor={'#76757799'}
-    thumbColor={value ? Constants.success : '#f4f3f4'}
+    thumbColor={value ? colors.success : '#f4f3f4'}
   />
   )
 }

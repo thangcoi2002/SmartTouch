@@ -1,10 +1,10 @@
 import {Platform, StyleSheet} from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Constants.mainColor,
+    backgroundColor: colors.mainColor,
     padding: 30,
     paddingBottom: Platform.OS === 'ios' ? 20 : 0,
     paddingTop: Platform.OS === 'ios' ? 100 : 30,
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: Constants.darkGrayOpacity,
+    backgroundColor: colors.darkGrayOpacity,
     borderRadius: 10,
     marginVertical: 20,
   },

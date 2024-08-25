@@ -1,16 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {
-  Image,
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import VectorIcon from './VectorIcon';
+import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {linkImage} from '~/utils/linkImage';
-import Constants, { darkTheme, lightTheme } from '~/common/Constant';
+import colors, {darkTheme, lightTheme} from '~/constants/colors';
 import {useSelector} from 'react-redux';
 import {RootState} from '~/redux/reducers/rootReducer';
 
@@ -29,14 +21,21 @@ const HeaderBack: React.FC<HeaderBackProps> = ({title}) => {
   return (
     <TouchableOpacity
       onPress={goBack}
-      style={[styles.container,{backgroundColor: darkMode? darkTheme.headerColor : lightTheme.headerColor}]}
+      style={[
+        styles.container,
+        {
+          backgroundColor: darkMode
+            ? darkTheme.headerColor
+            : lightTheme.headerColor,
+        },
+      ]}
       activeOpacity={1}>
       <Image source={linkImage('IC_Back')} style={styles.icon} />
       <Text
         style={[
           styles.title,
           {
-            color: darkMode ? Constants.white : Constants.black,
+            color: darkMode ? colors.white : colors.black,
           },
         ]}>
         {title}

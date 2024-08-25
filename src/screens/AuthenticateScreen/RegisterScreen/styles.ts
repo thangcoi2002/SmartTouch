@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,19 +9,19 @@ export const styles = StyleSheet.create({
     flexGrow: 1,
   },
   title: {
-    color: Constants.white,
+    color: colors.white,
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 30,
     marginTop: 10,
   },
   label: {
-    color: Constants.whiteGray,
+    color: colors.whiteGray,
     fontSize: 16,
     marginVertical: 10,
   },
   btnSubmit: {
-    backgroundColor: Constants.colorBtn,
+    backgroundColor: colors.colorBtn,
     padding: 15,
     margin: 10,
     borderRadius: 10,
@@ -31,6 +31,6 @@ export const styles = StyleSheet.create({
   },
   txtSubmit: {
     textAlign: 'center',
-    color: Constants.black,
+    color: colors.black,
   },
 });

@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '~/redux/reducers/rootReducer';
 import MainTabs from './Tabs/MainTabs';
 import AuthStack from './Stacks/AuthStack';
-import {getLocalStorage, saveLocalStorage} from '~/common/LocalStorage';
+import {getLocalStorage, saveLocalStorage} from '~/constants/LocalStorage';
 import {
   setCurrentUser,
   setLanguage,
@@ -32,7 +32,17 @@ export const Navigation: React.FC = () => {
       const [appInfo] = await Promise.all([getLocalStorage({key: 'appInfo'})]);
 
       if (appInfo === null) {
-        await saveLocalStorage({key: 'appInfo', value: appReducer});
+        await saveLocalStorage({
+          key: 'appInfo',
+          value: {
+            currentUser: null,
+            token: null,
+            isLoading: true,
+            darkMode: false,
+            firstOpen: true,
+            language: 'vi',
+          },
+        });
       } else {
         dispatch(setCurrentUser(appInfo.currentUser));
         dispatch(toggleFirstOpen(appInfo.firstOpen));
@@ -47,7 +57,7 @@ export const Navigation: React.FC = () => {
     } catch (error) {
       console.error('Error getting current user:', error);
     }
-  }, []);
+  }, [dispatch, i18n]);
 
   useEffect(() => {
     fetchApp();

@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 import {styles} from './styles';
 import {linkImage} from '~/utils/linkImage';
 import RegisterScreen from './RegisterScreen';
@@ -30,14 +30,14 @@ const Authenticate = () => {
             {
               backgroundColor:
                 toggleScreen === 0
-                  ? Constants.mainColor
-                  : Constants.darkGrayOpacity,
+                  ? colors.mainColor
+                  : colors.darkGrayOpacity,
             },
           ]}
           onPress={() => setToggleScreen(0)}>
           <Text
             style={{
-              color: toggleScreen === 0 ? Constants.whiteGray : Constants.gray,
+              color: toggleScreen === 0 ? colors.white : colors.gray,
             }}>
             {t('signIn')}
           </Text>
@@ -48,14 +48,14 @@ const Authenticate = () => {
             {
               backgroundColor:
                 toggleScreen === 1
-                  ? Constants.mainColor
-                  : Constants.darkGrayOpacity,
+                  ? colors.mainColor
+                  : colors.darkGrayOpacity,
             },
           ]}
           onPress={() => setToggleScreen(1)}>
           <Text
             style={{
-              color: toggleScreen === 1 ? Constants.whiteGray : Constants.gray,
+              color: toggleScreen === 1 ? colors.white : colors.gray,
             }}>
             {t('signUp')}
           </Text>

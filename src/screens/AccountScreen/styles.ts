@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 const {height} = Dimensions.get('screen');
 
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     width: 110,
     borderRadius: 9999,
     borderWidth: 3,
-    borderColor: Constants.success,
+    borderColor: colors.success,
     marginBottom: 10,
   },
   fullNameHeader: {

@@ -1,10 +1,11 @@
 export interface User {
-  _id: string | null;
+  id: string | null;
   fullName: string | null;
   email: string | null;
   userName: string | null;
   address: string | null;
   phoneNumber: string | null;
+  password: string | null;
 }
 
 export interface AppState {

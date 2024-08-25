@@ -1,12 +1,12 @@
 import {Text, TouchableOpacity, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateLocalStorage} from '~/common/LocalStorage';
+import {updateLocalStorage} from '~/constants/LocalStorage';
 import HeaderBack from '~/components/HeaderBack';
 import {setLanguage, toggleDarkMode} from '~/redux/action/appActions';
 import {RootState} from '~/redux/reducers/rootReducer';
 import {styles} from './styles';
 import SwitchCustom from '~/components/SwitchCustom';
-import Constants, {darkTheme, lightTheme} from '~/common/Constant';
+import colors, {darkTheme, lightTheme} from '~/constants/colors';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 
@@ -34,22 +34,22 @@ const DisplaySettingScreen: React.FC = () => {
         backgroundColor: darkMode ? darkTheme.mainColor : lightTheme.mainColor,
         flex: 1,
       }}>
-      <HeaderBack title="MENU" />
+      <HeaderBack title={t('backTitle')} />
       <View style={styles.container}>
         <View
           style={[
             styles.wrapper,
             {
               borderBottomColor: darkMode
-                ? Constants.borderGrayOpacity30
-                : Constants.borderGray,
+                ? colors.borderGrayOpacity30
+                : colors.borderGray,
             },
           ]}>
           <Text
             style={[
               styles.label,
               {
-                color: darkMode ? Constants.white : Constants.black,
+                color: darkMode ? colors.white : colors.black,
               },
             ]}>
             {t('language')}
@@ -61,16 +61,16 @@ const DisplaySettingScreen: React.FC = () => {
                 styles.btnLng,
                 darkMode
                   ? {
-                      borderColor: Constants.borderGrayOpacity10,
+                      borderColor: colors.borderGrayOpacity10,
                       backgroundColor:
                         language === 'en'
-                          ? Constants.greenDark
-                          : Constants.black,
+                          ? colors.greenDark
+                          : colors.black,
                     }
                   : {
-                      borderColor: Constants.borderGray,
+                      borderColor: colors.borderGray,
                       backgroundColor:
-                        language === 'en' ? Constants.success : Constants.white,
+                        language === 'en' ? colors.success : colors.white,
                     },
               ]}>
               <Text
@@ -86,16 +86,16 @@ const DisplaySettingScreen: React.FC = () => {
                 styles.btnLng,
                 darkMode
                   ? {
-                      borderColor: Constants.borderGrayOpacity10,
+                      borderColor: colors.borderGrayOpacity10,
                       backgroundColor:
                         language === 'vi'
-                          ? Constants.greenDark
-                          : Constants.black,
+                          ? colors.greenDark
+                          : colors.black,
                     }
                   : {
-                      borderColor: Constants.borderGray,
+                      borderColor: colors.borderGray,
                       backgroundColor:
-                        language === 'vi' ? Constants.success : Constants.white,
+                        language === 'vi' ? colors.success : colors.white,
                     },
               ]}>
               <Text
@@ -113,15 +113,15 @@ const DisplaySettingScreen: React.FC = () => {
             styles.wrapper,
             {
               borderBottomColor: darkMode
-                ? Constants.borderGrayOpacity30
-                : Constants.borderGray,
+                ? colors.borderGrayOpacity30
+                : colors.borderGray,
             },
           ]}>
           <Text
             style={[
               styles.label,
               {
-                color: darkMode ? Constants.white : Constants.black,
+                color: darkMode ? colors.white : colors.black,
               },
             ]}>
             {t('darkMode')}

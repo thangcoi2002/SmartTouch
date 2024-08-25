@@ -1195,6 +1195,8 @@ PODS:
     - Yoga
   - RNKeychain (8.2.0):
     - React-Core
+  - RNPermissions (4.1.5):
+    - React-Core
   - RNReanimated (3.14.0):
     - DoubleConversion
     - glog
@@ -1238,6 +1240,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNWifi (4.12.1):
+    - React-Core
   - SocketRocket (0.7.0)
   - TouchID (4.4.1):
     - React
@@ -1305,8 +1309,10 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNWifi (from `../node_modules/react-native-wifi-reborn`)
   - TouchID (from `../node_modules/react-native-touch-id`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -1434,10 +1440,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNKeychain:
     :path: "../node_modules/react-native-keychain"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNWifi:
+    :path: "../node_modules/react-native-wifi-reborn"
   TouchID:
     :path: "../node_modules/react-native-touch-id"
   Yoga:
@@ -1503,12 +1513,14 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
   RNGestureHandler: 8dbcccada4a7e702e7dec9338c251b1cf393c960
   RNKeychain: bfe3d12bf4620fe488771c414530bf16e88f3678
+  RNPermissions: 294531ede5a64d1528463e88fffef05675842042
   RNReanimated: f4ff116e33e0afc3d127f70efe928847c7c66355
   RNScreens: 5aeecbb09aa7285379b6e9f3c8a3c859bb16401c
+  RNWifi: d4dbe8edf13059dbffdc96181bb695caa726831c
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
   Yoga: 04f1db30bb810187397fa4c37dd1868a27af229c
 
-PODFILE CHECKSUM: 5410503290d178082685d04bae26b7761265b709
+PODFILE CHECKSUM: b18bcf40848b359d4f87e2b8075cd6f304871498
 
 COCOAPODS: 1.15.2

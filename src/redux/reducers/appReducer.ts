@@ -10,7 +10,15 @@ import {
 import {Action, AppState, User} from '../types';
 
 const initData: AppState = {
-  currentUser: null,
+  currentUser: {
+    id: null,
+    fullName: null,
+    email: null,
+    userName: null,
+    address: null,
+    phoneNumber: null,
+    password: null,
+  },
   token: null,
   isLoading: true,
   darkMode: false,

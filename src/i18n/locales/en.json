@@ -1,4 +1,11 @@
 {
+  "onboardingTitle1": "Use anytime, anywhere",
+  "onboardingTitle2": "Features easily accessible to users",
+  "onboardingTitle3": "Easily manage the house",
+  "onboardingDescription1": "Automate everyday tasks with our smart technology, saving you time and effort.",
+  "onboardingDescription2": "Get data-driven analytics and recommendations for more accurate decision-making and improved work efficiency.",
+  "onboardingDescription3": "Customize the app to fit your needs, delivering a personalized and intelligent experience.",
+  "getStated": "Get stated",
   "logout": "Log out",
   "signUp": "Sign up",
   "signIn": "Sign in!",
@@ -14,5 +21,7 @@
   "support": "Support",
   "settings": "Settings",
   "darkMode": "Dark mode",
-  "language": "Language"
+  "language": "Language",
+  "backTitle": "Back",
+  "addDeviceTitle": "Add device"
 }

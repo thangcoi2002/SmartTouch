@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 import TextCustom from '~/components/TextCustom';
 import VectorIcon from '~/components/VectorIcon';
 import {styles} from './styles';
@@ -46,7 +46,7 @@ const RegisterScreen = () => {
             <VectorIcon.FontAwesomeVectorIcon
               name="user"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />
@@ -61,7 +61,7 @@ const RegisterScreen = () => {
             <VectorIcon.FontAwesomeVectorIcon
               name="lock"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />
@@ -76,7 +76,7 @@ const RegisterScreen = () => {
             <VectorIcon.FontAwesomeVectorIcon
               name="lock"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />
@@ -90,7 +90,7 @@ const RegisterScreen = () => {
             <VectorIcon.FontAwesomeVectorIcon
               name="user"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />
@@ -105,7 +105,7 @@ const RegisterScreen = () => {
             <VectorIcon.MaterialVectorIcon
               name="alternate-email"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />
@@ -119,7 +119,7 @@ const RegisterScreen = () => {
             <VectorIcon.EntypoVectorIcon
               name="address"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />
@@ -134,7 +134,7 @@ const RegisterScreen = () => {
             <VectorIcon.FontAwesomeVectorIcon
               name="phone"
               size={20}
-              color={Constants.darkBlue}
+              color={colors.gray}
             />
           }
         />

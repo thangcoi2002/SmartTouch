@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
   },
   label: {
-    color: Constants.black,
+    color: colors.black,
     fontSize: 16,
     fontWeight: 'bold',
   },

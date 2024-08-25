@@ -1,4 +1,11 @@
 {
+  "onboardingTitle1": "Sử dụng mọi lúc mọi nơi",
+  "onboardingTitle2": "Tính năng dễ dàng tiếp cận người dùng",
+  "onboardingTitle3": "Dễ dàng quản lý ngôi nhà",
+  "onboardingDescription1": "Tự động hóa các tác vụ hàng ngày với công nghệ thông minh của chúng tôi, giúp bạn tiết kiệm thời gian và công sức.",
+  "onboardingDescription2": "Nhận phân tích và gợi ý dựa trên dữ liệu để ra quyết định chính xác hơn và cải thiện hiệu quả công việc.",
+  "onboardingDescription3": "Tùy chỉnh ứng dụng để phù hợp với nhu cầu của bạn, mang đến trải nghiệm cá nhân hóa và thông minh.",
+  "getStated": "Bắt đầu",
   "logout": "Đăng xuất",
   "signUp": "Đăng ký",
   "signIn": "Đăng nhập",
@@ -14,5 +21,8 @@
   "support": "Hỗ trợ",
   "settings": "Cài đặt",
   "darkMode": "Chế độ tối",
-  "language": "Ngôn ngữ"
+  "language": "Ngôn ngữ",
+  "backTitle": "Trở về",
+  "addDeviceTitle": "Thêm thiết bị"
+
 }

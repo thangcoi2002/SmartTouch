@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import VectorIcon from './VectorIcon';
 import React, {useState} from 'react';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
+import {useSelector} from 'react-redux';
+import {RootState} from '~/redux/reducers/rootReducer';
 
 interface TextCustomProps {
   value?: string;
@@ -20,6 +22,7 @@ interface TextCustomProps {
   password?: boolean;
   keyboardType?: 'default' | 'email' | 'number';
   Icon?: JSX.Element;
+  readonly?: boolean;
   containerStyle?: StyleProp<ViewStyle>;
   textInputStyle?: StyleProp<TextStyle>;
 }
@@ -32,7 +35,10 @@ const TextCustom: React.FC<TextCustomProps> = ({
   password,
   keyboardType,
   Icon,
+  containerStyle,
+  readonly,
 }) => {
+  const {darkMode} = useSelector((state: RootState) => state.appReducer);
   const [showPassword, setShowPassword] = useState(password);
   let keyBoard: KeyboardTypeOptions = 'default';
 
@@ -49,16 +55,31 @@ const TextCustom: React.FC<TextCustomProps> = ({
   }
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: darkMode ? colors.darkGrayOpacity : colors.white,
+          borderWidth: darkMode ? 0 : 1,
+          borderColor: colors.borderGray,
+        },
+        containerStyle,
+      ]}>
       {Icon}
       <TextInput
         onChangeText={text => onChangeText(name, text)}
         value={value}
         placeholder={label}
-        style={styles.textInput}
+        style={[
+          styles.textInput,
+          {
+            color: darkMode ? colors.white : colors.black,
+          },
+        ]}
         secureTextEntry={showPassword}
         keyboardType={keyBoard}
-        placeholderTextColor={Constants.gray}
+        placeholderTextColor={colors.gray}
+        readOnly={readonly}
       />
 
       {password && (
@@ -68,7 +89,7 @@ const TextCustom: React.FC<TextCustomProps> = ({
           <VectorIcon.FeatherVectorIcon
             name={showPassword ? 'eye-off' : 'eye'}
             size={20}
-            color={Constants.gray}
+            color={colors.gray}
           />
         </TouchableOpacity>
       )}
@@ -83,13 +104,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
-    backgroundColor: '#161C22',
+    backgroundColor: colors.darkGrayOpacity,
     marginVertical: 2,
   },
   textInput: {
     width: '90%',
     fontSize: 16,
-    color: '#666',
     overflow: 'hidden',
     marginLeft: 10,
   },
@@ -98,7 +118,6 @@ const styles = StyleSheet.create({
     right: 10,
     top: 15,
     zIndex: 10,
-    backgroundColor: Constants.white,
     borderRadius: 10,
   },
 });

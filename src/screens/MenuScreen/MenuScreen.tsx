@@ -14,10 +14,10 @@ import {styles} from './styles';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '~/redux/reducers/rootReducer';
 import VectorIcon from '~/components/VectorIcon';
-import {updateLocalStorage} from '~/common/LocalStorage';
+import {updateLocalStorage} from '~/constants/LocalStorage';
 import {removeCurrentUser} from '~/redux/action/appActions';
 import {RootStackParamList, ScreenName} from '~/navigation';
-import Constants, {darkTheme, lightTheme} from '~/common/Constant';
+import colors, {darkTheme, lightTheme} from '~/constants/colors';
 
 const MenuScreen = () => {
   const {t} = useTranslation();
@@ -62,22 +62,22 @@ const MenuScreen = () => {
               styles.btnMenu,
               {
                 backgroundColor: darkMode
-                  ? Constants.darkGrayOpacity
-                  : Constants.white,
+                  ? colors.darkGrayOpacity
+                  : colors.white,
               },
             ]}
             activeOpacity={0.9}
             onPress={() => onNavigation(ScreenName.Account)}>
             <VectorIcon.FontAwesomeVectorIcon
               name="user-circle-o"
-              color={darkMode ? Constants.white : Constants.black}
+              color={darkMode ? colors.white : colors.black}
               size={20}
             />
             <Text
               style={[
                 styles.txtMenu,
                 {
-                  color: darkMode ? Constants.white : Constants.gray,
+                  color: darkMode ? colors.white : colors.gray,
                 },
               ]}>
               {t('account')}
@@ -88,25 +88,25 @@ const MenuScreen = () => {
               styles.btnMenu,
               {
                 backgroundColor: darkMode
-                  ? Constants.darkGrayOpacity
-                  : Constants.white,
+                  ? colors.darkGrayOpacity
+                  : colors.white,
               },
             ]}
             activeOpacity={0.9}
             onPress={() => onNavigation(ScreenName.DisplaySetting)}>
             <VectorIcon.SimpleLineIcon
               name="settings"
-              color={darkMode ? Constants.white : Constants.black}
+              color={darkMode ? colors.white : colors.black}
               size={20}
             />
             <Text
               style={[
                 styles.txtMenu,
                 {
-                  color: darkMode ? Constants.white : Constants.gray,
+                  color: darkMode ? colors.white : colors.gray,
                 },
               ]}>
-              {t('display')}
+              {t('settings')}
             </Text>
           </TouchableOpacity>
         </View>
@@ -116,22 +116,22 @@ const MenuScreen = () => {
               styles.btnMenu,
               {
                 backgroundColor: darkMode
-                  ? Constants.darkGrayOpacity
-                  : Constants.white,
+                  ? colors.darkGrayOpacity
+                  : colors.white,
               },
             ]}
             activeOpacity={0.9}
             onPress={() => onNavigation(ScreenName.DisplaySetting)}>
             <VectorIcon.AntDesignVectorIcon
               name="home"
-              color={darkMode ? Constants.white : Constants.black}
+              color={darkMode ? colors.white : colors.black}
               size={20}
             />
             <Text
               style={[
                 styles.txtMenu,
                 {
-                  color: darkMode ? Constants.white : Constants.gray,
+                  color: darkMode ? colors.white : colors.gray,
                 },
               ]}>
               {t('managerHome')}
@@ -142,22 +142,22 @@ const MenuScreen = () => {
               styles.btnMenu,
               {
                 backgroundColor: darkMode
-                  ? Constants.darkGrayOpacity
-                  : Constants.white,
+                  ? colors.darkGrayOpacity
+                  : colors.white,
               },
             ]}
             activeOpacity={0.9}
             onPress={() => onNavigation(ScreenName.DisplaySetting)}>
             <VectorIcon.AntDesignVectorIcon
               name="warning"
-              color={darkMode ? Constants.white : Constants.black}
+              color={darkMode ? colors.white : colors.black}
               size={20}
             />
             <Text
               style={[
                 styles.txtMenu,
                 {
-                  color: darkMode ? Constants.white : Constants.gray,
+                  color: darkMode ? colors.white : colors.gray,
                 },
               ]}>
               {t('support')}

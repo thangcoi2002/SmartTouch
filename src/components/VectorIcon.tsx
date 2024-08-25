@@ -14,7 +14,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Foundation from 'react-native-vector-icons/Foundation';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 interface VectorIconProps {
   name: string;
@@ -29,7 +29,7 @@ const IonVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={Platform.OS === 'ios' ? `ios-${props.name}` : `md-${props.name}`}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -40,7 +40,7 @@ const OctIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -51,7 +51,7 @@ const SimpleLineIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -62,7 +62,7 @@ const MaterialVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -73,7 +73,7 @@ const MaterialCommunityVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -84,7 +84,7 @@ const AntDesignVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -95,7 +95,7 @@ const FontAwesomeVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -106,7 +106,7 @@ const FontAwesome5VectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -117,7 +117,7 @@ const EntypoVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -128,7 +128,7 @@ const ZocialVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -139,7 +139,7 @@ const FontistoVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -150,7 +150,7 @@ const FeatherVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -161,7 +161,7 @@ const EvilIconsVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }
@@ -172,7 +172,7 @@ const FoundationVectorIcon: React.FC<VectorIconProps> = (props) => {
       name={props.name}
       size={props.size}
       style={props.style}
-      color={props.color || Constants.darkBlue}
+      color={props.color || colors.darkBlue}
     />
   );
 }

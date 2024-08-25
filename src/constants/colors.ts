@@ -12,7 +12,7 @@ export const lightTheme = {
   borderColor: '#D1D5DB30',
 };
 
-const Constants = {
+const colors = {
   mainColor: '#2A9D8F',
 
   borderGray: '#D1D5DB',
@@ -33,4 +33,4 @@ const Constants = {
   error: '#EF5350',
   colorBtn: '#5ED5A8',
 };
-export default Constants;
+export default colors;

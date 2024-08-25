@@ -1,5 +1,5 @@
 import {Platform, StyleSheet} from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 export const styles = StyleSheet.create({
   BGHeader: {
@@ -16,19 +16,19 @@ export const styles = StyleSheet.create({
     width: 100,
     borderRadius: 9999,
     borderWidth: 3,
-    borderColor: Constants.success,
+    borderColor: colors.success,
     marginBottom: 10,
   },
   boxInfo: {flexDirection: 'column'},
   fullName: {
     fontSize: 20,
-    color: Constants.white,
+    color: colors.white,
     marginLeft: 10,
     fontWeight: '600',
   },
   phoneNumber: {
     fontSize: 16,
-    color: Constants.whiteGray,
+    color: colors.whiteGray,
     marginLeft: 10,
     marginTop: 5,
   },
@@ -55,14 +55,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    shadowColor: Constants.black,
+    shadowColor: colors.black,
     shadowOpacity: 0.8,
     elevation: 1,
     ...Platform.select({
-      ios:{
-    shadowOpacity: 0.1,
-      }
-    })
+      ios: {
+        shadowOpacity: 0.1,
+      },
+    }),
   },
   txtMenu: {
     marginTop: 4,
@@ -70,7 +70,7 @@ export const styles = StyleSheet.create({
   },
 
   btnLogout: {
-    backgroundColor: Constants.error,
+    backgroundColor: colors.error,
     padding: 15,
     borderRadius: 10,
     width: '100%',
@@ -81,7 +81,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   txtLogout: {
-    color: Constants.white,
+    color: colors.white,
     fontWeight: '700',
   },
 });

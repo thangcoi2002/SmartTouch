@@ -5,7 +5,7 @@ import AddDeviceScreen from '~/screens/AddDeviceScreen';
 import {ScreenName} from '../type';
 import {TabOptions} from './TabOptions';
 import VectorIcon from '~/components/VectorIcon';
-import Constants, {darkTheme, lightTheme} from '~/common/Constant';
+import colors, {darkTheme, lightTheme} from '~/constants/colors';
 import HomeStack from '../Stacks/HomeStack';
 import MenuStack from '../Stacks/MenuStack';
 import {useSelector} from 'react-redux';
@@ -52,7 +52,7 @@ const MainTabs: React.FC<MainTabsProps> = ({state, routeName}) => {
             ),
           }}
         />
-  
+
         <Tab.Screen
           name={ScreenName.AddStack}
           component={AddStack}
@@ -61,8 +61,8 @@ const MainTabs: React.FC<MainTabsProps> = ({state, routeName}) => {
               <Animated.View
                 style={{
                   backgroundColor: focused
-                    ? Constants.mainColor
-                    : Constants.whiteGray,
+                    ? colors.mainColor
+                    : colors.whiteGray,
                   width: 50,
                   height: 50,
                   transform: [{scale: focused ? 1.2 : 1}],
@@ -76,13 +76,13 @@ const MainTabs: React.FC<MainTabsProps> = ({state, routeName}) => {
                 <VectorIcon.MaterialVectorIcon
                   name="add"
                   size={30}
-                  color={Constants.white}
+                  color={colors.white}
                 />
               </Animated.View>
             ),
           }}
         />
-  
+
         <Tab.Screen
           name={ScreenName.MenuStack}
           component={MenuStack}

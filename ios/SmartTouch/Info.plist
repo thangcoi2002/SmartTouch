@@ -45,6 +45,12 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+<string>Ứng dụng cần quyền truy cập vị trí để xác định Wi-Fi hiện tại.</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>Ứng dụng cần quyền truy cập vị trí để xác định Wi-Fi hiện tại.</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Ứng dụng cần quyền truy cập vị trí để xác định Wi-Fi hiện tại.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

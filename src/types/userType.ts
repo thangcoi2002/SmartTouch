@@ -1,10 +1,10 @@
-import { DeviceType } from "./deviceType";
+import {DeviceType} from './deviceType';
 
 export type UserType = Readonly<{
-  id: string;
-  name: string;
-  email: string;
-  userName: string;
-  password: string;
+  id: string | null;
+  name: string | null;
+  email: string | null;
+  userName: string | null;
+  password: string | null;
   device: DeviceType[];
 }>;

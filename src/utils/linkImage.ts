@@ -14,6 +14,9 @@ export const linkImage = (name: string): any => {
     BG_Loading: require('../assets/images/BG_Loading.png'),
     BG_GetStated: require('../assets/images/BG_GetStated.png'),
     BG_MenuHeader: require('../assets/images/BG_MenuHeader.jpg'),
+
+    Switch_device: require('../assets/images/switch-device.png'),
+    Socket_device: require('../assets/images/socket-device.png'),
   };
 
   return images[name] || null;

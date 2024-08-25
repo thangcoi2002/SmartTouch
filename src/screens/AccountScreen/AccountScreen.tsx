@@ -7,7 +7,7 @@ import {RootStackParamList, ScreenName} from '~/navigation';
 import {RootState} from '~/redux/reducers/rootReducer';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
-import {darkTheme, lightTheme} from '~/common/Constant';
+import {darkTheme, lightTheme} from '~/constants/colors';
 import {linkImage} from '~/utils/linkImage';
 import VectorIcon from '~/components/VectorIcon';
 

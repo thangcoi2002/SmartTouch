@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 
 const {height} = Dimensions.get('screen');
 
@@ -30,13 +30,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     paddingBottom: 20,
+    marginBottom: 10,
   },
   avatar: {
     height: 110,
     width: 110,
     borderRadius: 9999,
     borderWidth: 3,
-    borderColor: Constants.success,
+    borderColor: colors.success,
     marginBottom: 10,
   },
   fullNameHeader: {
@@ -55,6 +56,17 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    
+  },
+
+  btnSave: {
+    height: 50,
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    backgroundColor: colors.greenOpacity8,
+    position: 'absolute',
+    bottom: 30,
+    right: 20,
   },
 });

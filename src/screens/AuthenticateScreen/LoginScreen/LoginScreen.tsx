@@ -3,7 +3,7 @@ import {Alert, Image, Text, TouchableOpacity, View} from 'react-native';
 import TouchID from 'react-native-touch-id';
 import * as Keychain from 'react-native-keychain';
 
-import Constants from '~/common/Constant';
+import colors from '~/constants/colors';
 import TextCustom from '~/components/TextCustom';
 import VectorIcon from '~/components/VectorIcon';
 import {styles} from './styles';
@@ -11,7 +11,7 @@ import {linkImage} from '~/utils/linkImage';
 import {User} from '~/redux/types';
 import {useDispatch} from 'react-redux';
 import {setCurrentUser} from '~/redux/action/appActions';
-import {updateLocalStorage} from '~/common/LocalStorage';
+import {updateLocalStorage} from '~/constants/LocalStorage';
 import {useTranslation} from 'react-i18next';
 
 const LoginScreen = () => {
@@ -35,7 +35,6 @@ const LoginScreen = () => {
         if (biometryType) {
           setBiometricsObject(biometryType);
         } else {
-          console.log('Biometrics not supported or not available.');
           setBiometricsObject(null);
         }
       } catch (error) {
@@ -70,12 +69,13 @@ const LoginScreen = () => {
 
   const handleSubmit = () => {
     const userData: User = {
-      _id: '123',
+      id: '123',
       fullName: 'Tran Ngoc Thang',
       email: '123',
       userName: '123',
       address: '123',
       phoneNumber: '0987654321',
+      password: '',
     };
 
     dispatch(setCurrentUser(userData));
@@ -94,14 +94,14 @@ const LoginScreen = () => {
           <VectorIcon.FontAwesomeVectorIcon
             name="user"
             size={20}
-            color={Constants.darkBlue}
+            color={colors.gray}
           />
         }
       />
 
       <Text style={styles.label}>{t('password')}</Text>
       <TextCustom
-        label={t('userName')}
+        label={t('password')}
         name={'password'}
         onChangeText={onChangeText}
         password={true}
@@ -109,7 +109,7 @@ const LoginScreen = () => {
           <VectorIcon.FontAwesomeVectorIcon
             name="lock"
             size={20}
-            color={Constants.darkBlue}
+            color={colors.gray}
           />
         }
       />
@@ -126,10 +126,6 @@ const LoginScreen = () => {
             )}
             style={styles.icTouchId}
           />
-          <Text style={styles.txtTouchID}>
-            Login with{' '}
-            {biometricsObject === 'Fingerprint' ? 'Touch ID' : 'Face ID'}
-          </Text>
         </TouchableOpacity>
       )}
     </View>
