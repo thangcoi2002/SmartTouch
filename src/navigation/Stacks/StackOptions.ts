@@ -5,6 +5,6 @@ type ScreenOptionsProps = Readonly<{
   navigation: NativeStackNavigationProp<ParamListBase>;
 }>;
 
-export const StackOptions = ({navigation}: ScreenOptionsProps) => ({
+export const StackOptions = ({}: ScreenOptionsProps) => ({
   headerShown: false,
 });

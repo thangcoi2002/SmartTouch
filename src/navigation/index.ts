@@ -1,2 +1,2 @@
 export {Navigation} from './Navigation';
-export * from './type'
+export * from './type';

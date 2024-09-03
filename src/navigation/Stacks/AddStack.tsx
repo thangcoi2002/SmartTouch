@@ -1,8 +1,8 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import { ScreenName } from '../type';
+import {ScreenName} from '../type';
 import React from 'react';
-import { StackOptions } from './StackOptions';
+import {StackOptions} from './StackOptions';
 import AddDeviceScreen from '~/screens/AddDeviceScreen/AddDeviceScreen';
 
 const Stack = createStackNavigator();
