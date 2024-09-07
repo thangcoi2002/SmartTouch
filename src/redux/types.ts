@@ -1,3 +1,5 @@
+export type FetchingStatus = 'idle' | 'loading' | 'failed';
+
 export interface User {
   id: string | null;
   fullName: string | null;
@@ -14,7 +16,7 @@ export interface AppState {
   isLoading: boolean;
   darkMode: boolean;
   firstOpen: boolean;
-  language: string;
+  status: FetchingStatus;
 }
 
 export interface Action<T = any> {

@@ -9,14 +9,14 @@ import {
   Animated,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import {useTranslation} from 'react-i18next';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+
 import {linkImage} from '~/utils/linkImage';
 import {styles} from './style';
-import {useDispatch} from 'react-redux';
-import {toggleFirstOpen} from '~/redux/action/appActions';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList, ScreenName} from '~/navigation';
-import {updateLocalStorage} from '~/constants/LocalStorage';
-import {useTranslation} from 'react-i18next';
+import {firstAppOpen} from '~/redux/slices/app.slice';
+import {useAppDispatch} from '~/redux/store';
 
 interface Item {
   title: string;
@@ -32,7 +32,7 @@ interface RenderItemProps {
 const {width: screenWidth} = Dimensions.get('window');
 
 const Onboarding = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const {t} = useTranslation();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -72,8 +72,7 @@ const Onboarding = () => {
   };
 
   const onSubmit = () => {
-    dispatch(toggleFirstOpen(false));
-    updateLocalStorage({key: 'appInfo', value: {firstOpen: false}});
+    dispatch(firstAppOpen());
     navigation.navigate(ScreenName.Authenticate);
   };
 

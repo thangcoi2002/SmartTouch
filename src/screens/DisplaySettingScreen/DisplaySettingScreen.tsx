@@ -1,21 +1,21 @@
+import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {Text, TouchableOpacity, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {updateLocalStorage} from '~/constants/LocalStorage';
+
+import {updateLocalStorage} from '~/utils/localStorage';
 import HeaderBack from '~/components/HeaderBack';
-import {setLanguage, toggleDarkMode} from '~/redux/action/appActions';
-import {RootState} from '~/redux/reducers/rootReducer';
 import {styles} from './styles';
 import SwitchCustom from '~/components/SwitchCustom';
 import colors, {darkTheme, lightTheme} from '~/constants/colors';
-import React from 'react';
-import {useTranslation} from 'react-i18next';
+import {toggleDarkMode, useSelectorApp} from '~/redux/slices/app.slice';
+import {useAppDispatch} from '~/redux/store';
+import {setUserLanguage} from '~/services/async-storage.service';
 
 const DisplaySettingScreen: React.FC = () => {
   const {t, i18n} = useTranslation();
-  const dispatch = useDispatch();
-  const {darkMode, language} = useSelector(
-    (state: RootState) => state.appReducer,
-  );
+  const dispatch = useAppDispatch();
+  const {darkMode} = useSelectorApp();
+  const currentLanguage = i18n.language;
 
   const handleDarkMode = () => {
     dispatch(toggleDarkMode(!darkMode));
@@ -24,8 +24,7 @@ const DisplaySettingScreen: React.FC = () => {
 
   const onChangeLng = (lng: string) => {
     i18n.changeLanguage(lng);
-    updateLocalStorage({key: 'appInfo', value: {lng}});
-    dispatch(setLanguage(lng));
+    setUserLanguage(lng);
   };
 
   return (
@@ -63,14 +62,16 @@ const DisplaySettingScreen: React.FC = () => {
                   ? {
                       borderColor: colors.borderGrayOpacity10,
                       backgroundColor:
-                        language === 'en'
+                        currentLanguage === 'en'
                           ? colors.greenDark
                           : colors.black,
                     }
                   : {
                       borderColor: colors.borderGray,
                       backgroundColor:
-                        language === 'en' ? colors.success : colors.white,
+                        currentLanguage === 'en'
+                          ? colors.success
+                          : colors.white,
                     },
               ]}>
               <Text
@@ -88,14 +89,16 @@ const DisplaySettingScreen: React.FC = () => {
                   ? {
                       borderColor: colors.borderGrayOpacity10,
                       backgroundColor:
-                        language === 'vi'
+                        currentLanguage === 'vi'
                           ? colors.greenDark
                           : colors.black,
                     }
                   : {
                       borderColor: colors.borderGray,
                       backgroundColor:
-                        language === 'vi' ? colors.success : colors.white,
+                        currentLanguage === 'vi'
+                          ? colors.success
+                          : colors.white,
                     },
               ]}>
               <Text

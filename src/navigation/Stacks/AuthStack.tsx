@@ -10,6 +10,7 @@ import AuthenticateScreen from '~/screens/AuthenticateScreen';
 interface AuthStackProps {
   state: AppState;
 }
+
 const Stack = createStackNavigator();
 const AuthStack: React.FC<AuthStackProps> = ({state}) => {
   const {firstOpen} = state;

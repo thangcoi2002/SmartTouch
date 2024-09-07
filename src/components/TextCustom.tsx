@@ -11,14 +11,13 @@ import {
 import VectorIcon from './VectorIcon';
 import React, {useState} from 'react';
 import colors from '~/constants/colors';
-import {useSelector} from 'react-redux';
-import {RootState} from '~/redux/reducers/rootReducer';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 
 interface TextCustomProps {
   value?: string;
   onChangeText: (name: string, text: string) => void;
   name: string;
-  label: string;
+  label?: string;
   password?: boolean;
   keyboardType?: 'default' | 'email' | 'number';
   Icon?: JSX.Element;
@@ -38,7 +37,7 @@ const TextCustom: React.FC<TextCustomProps> = ({
   containerStyle,
   readonly,
 }) => {
-  const {darkMode} = useSelector((state: RootState) => state.appReducer);
+  const {darkMode} = useSelectorApp();
   const [showPassword, setShowPassword] = useState(password);
   let keyBoard: KeyboardTypeOptions = 'default';
 

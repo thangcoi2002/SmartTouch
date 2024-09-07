@@ -1,19 +1,12 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import {View, Text} from 'react-native';
+import {useDispatch} from 'react-redux';
 import {darkTheme, lightTheme} from '~/constants/colors';
-import {updateLocalStorage} from '~/constants/LocalStorage';
-import {removeCurrentUser} from '~/redux/action/appActions';
-import {RootState} from '~/redux/reducers/rootReducer';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const {darkMode} = useSelector((state: RootState) => state.appReducer);
-
-  const logOut = () => {
-    dispatch(removeCurrentUser());
-    updateLocalStorage({key: 'appInfo', value: {currentUser: null}});
-  };
+  const {darkMode} = useSelectorApp();
 
   return (
     <View
@@ -21,9 +14,7 @@ const HomeScreen = () => {
         backgroundColor: darkMode ? darkTheme.mainColor : lightTheme.mainColor,
         flex: 1,
       }}>
-      <TouchableOpacity onPress={logOut}>
-        <Text>Toggle darkMode</Text>
-      </TouchableOpacity>
+      <Text>Toggle darkMode</Text>
     </View>
   );
 };

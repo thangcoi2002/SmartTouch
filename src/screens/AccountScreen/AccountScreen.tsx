@@ -1,15 +1,14 @@
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
-import {useSelector} from 'react-redux';
 
 import {RootStackParamList, ScreenName} from '~/navigation';
-import {RootState} from '~/redux/reducers/rootReducer';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {darkTheme, lightTheme} from '~/constants/colors';
 import {linkImage} from '~/utils/linkImage';
 import VectorIcon from '~/components/VectorIcon';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 
 interface ItemType {
   title: string;
@@ -17,9 +16,7 @@ interface ItemType {
 }
 
 const AccountScreen = () => {
-  const {darkMode, currentUser} = useSelector(
-    (state: RootState) => state.appReducer,
-  );
+  const {darkMode, currentUser} = useSelectorApp();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const mapData: ItemType[] = [

@@ -1,10 +1,8 @@
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, TouchableOpacity, View} from 'react-native';
-import {useSelector} from 'react-redux';
 
 import {RootStackParamList} from '~/navigation';
-import {RootState} from '~/redux/reducers/rootReducer';
 import {styles} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {darkTheme, lightTheme} from '~/constants/colors';
@@ -12,9 +10,10 @@ import {linkImage} from '~/utils/linkImage';
 import BodyEditProfile from './BodyEditProfile';
 import HeaderEditProfile from './HeaderEditProfile';
 import VectorIcon from '~/components/VectorIcon';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 
 const EditProfileScreen = () => {
-  const {darkMode} = useSelector((state: RootState) => state.appReducer);
+  const {darkMode} = useSelectorApp();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const goBack = () => {

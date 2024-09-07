@@ -9,27 +9,22 @@ import {
 import {useTranslation} from 'react-i18next';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 
+import {useAppDispatch} from '~/redux/store';
 import {linkImage} from '~/utils/linkImage';
 import {styles} from './styles';
-import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '~/redux/reducers/rootReducer';
 import VectorIcon from '~/components/VectorIcon';
-import {updateLocalStorage} from '~/constants/LocalStorage';
-import {removeCurrentUser} from '~/redux/action/appActions';
 import {RootStackParamList, ScreenName} from '~/navigation';
 import colors, {darkTheme, lightTheme} from '~/constants/colors';
+import {logout, useSelectorApp} from '~/redux/slices/app.slice';
 
 const MenuScreen = () => {
   const {t} = useTranslation();
-  const {currentUser, darkMode} = useSelector(
-    (state: RootState) => state.appReducer,
-  );
-  const dispatch = useDispatch();
+  const {currentUser, darkMode} = useSelectorApp();
+  const dispatch = useAppDispatch();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
-  const logOut = () => {
-    dispatch(removeCurrentUser());
-    updateLocalStorage({key: 'appInfo', value: {currentUser: null}});
+  const onPressLogout = () => {
+    dispatch(logout());
   };
 
   const onNavigation = (screenName: ScreenName) => {
@@ -165,7 +160,7 @@ const MenuScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.btnLogout} onPress={logOut}>
+        <TouchableOpacity style={styles.btnLogout} onPress={onPressLogout}>
           <Text style={styles.txtLogout}>{t('logout')}</Text>
         </TouchableOpacity>
       </View>

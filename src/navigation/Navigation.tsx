@@ -1,71 +1,36 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   createNavigationContainerRef,
   NavigationContainer,
 } from '@react-navigation/native';
-import {useDispatch, useSelector} from 'react-redux';
 
-import {RootState} from '~/redux/reducers/rootReducer';
 import MainTabs from './Tabs/MainTabs';
 import AuthStack from './Stacks/AuthStack';
-import {getLocalStorage, saveLocalStorage} from '~/constants/LocalStorage';
-import {
-  setCurrentUser,
-  setLanguage,
-  setLoading,
-  toggleDarkMode,
-  toggleFirstOpen,
-} from '~/redux/action/appActions';
 import LoadingScreen from '~/screens/LoadingScreen/LoadingScreen';
-import {useTranslation} from 'react-i18next';
+import {useAppDispatch} from '~/redux/store';
+import {loadApp, toggleLoading, useSelectorApp} from '~/redux/slices/app.slice';
 
 const ref = createNavigationContainerRef();
 
 export const Navigation: React.FC = () => {
-  const {i18n} = useTranslation();
-  const dispatch = useDispatch();
-  const appReducer = useSelector((state: RootState) => state.appReducer);
+  const dispatch = useAppDispatch();
+  const loadingApp = useSelectorApp();
   const [routeName, setRouteName] = useState<string | undefined>();
 
-  const fetchApp = useCallback(async () => {
-    try {
-      const [appInfo] = await Promise.all([getLocalStorage({key: 'appInfo'})]);
-
-      if (appInfo === null) {
-        await saveLocalStorage({
-          key: 'appInfo',
-          value: {
-            currentUser: null,
-            token: null,
-            isLoading: true,
-            darkMode: false,
-            firstOpen: true,
-            language: 'vi',
-          },
-        });
-      } else {
-        dispatch(setCurrentUser(appInfo.currentUser));
-        dispatch(toggleFirstOpen(appInfo.firstOpen));
-        dispatch(toggleDarkMode(appInfo.darkMode));
-        dispatch(setLanguage(appInfo.language));
-        i18n.changeLanguage(appInfo.language);
-      }
-
-      setTimeout(() => {
-        dispatch(setLoading(false));
-      }, 2000);
-    } catch (error) {
-      console.error('Error getting current user:', error);
-    }
-  }, [dispatch, i18n]);
-
   useEffect(() => {
+    const fetchApp = async () => {
+      dispatch(loadApp());
+      setTimeout(() => {
+        dispatch(toggleLoading(false));
+      }, 1000);
+    };
+
     fetchApp();
-  }, [fetchApp]);
+  }, [dispatch]);
 
   return (
     <>
-      {appReducer.isLoading ? (
+      {loadingApp.isLoading ? (
         <LoadingScreen />
       ) : (
         <NavigationContainer
@@ -77,10 +42,10 @@ export const Navigation: React.FC = () => {
             const currentRouteName = ref.getCurrentRoute()?.name;
             setRouteName(currentRouteName);
           }}>
-          {appReducer.currentUser ? (
-            <MainTabs state={appReducer} routeName={routeName} />
+          {loadingApp.currentUser ? (
+            <MainTabs state={loadingApp} routeName={routeName} />
           ) : (
-            <AuthStack state={appReducer} />
+            <AuthStack state={loadingApp} />
           )}
         </NavigationContainer>
       )}

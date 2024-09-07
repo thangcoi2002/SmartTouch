@@ -23,6 +23,8 @@
   "darkMode": "Chế độ tối",
   "language": "Ngôn ngữ",
   "backTitle": "Trở về",
-  "addDeviceTitle": "Thêm thiết bị"
-
+  "addDeviceTitle": "Thêm thiết bị",
+  "rejectPermissionLocation": "Vui lòng cấp quyền vị trí",
+  "requestConnectWifi":"Vui lòng kết nối với wifi hoặc quyền vị trí",
+  "passwordWifi": "Vui lòng nhập mật khẩu wifi!"
 }

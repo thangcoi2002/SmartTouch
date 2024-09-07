@@ -1,25 +1,52 @@
-import i18n from 'i18next';
+import i18next, {LanguageDetectorAsyncModule} from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import translationEN from './locales/en.json';
 import translationVN from './locales/vi.json';
+import {
+  getUserLanguage,
+  setUserLanguage,
+} from '~/services/async-storage.service';
+
+const ENGLISH_CODE = 'en';
+const VIETNAMESE_CODE = 'vi';
 
 const resources = {
-  en: {
+  [ENGLISH_CODE]: {
     translation: translationEN,
   },
-  vi: {
+  [VIETNAMESE_CODE]: {
     translation: translationVN,
   },
 };
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: 'vi',
-  compatibilityJSON: 'v3',
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false,
+const languageDetector: LanguageDetectorAsyncModule = {
+  type: 'languageDetector',
+  async: true,
+  detect: callback => {
+    getUserLanguage((error, language) => {
+      let defaultLanguage = ENGLISH_CODE;
+      if (language) {
+        defaultLanguage = language;
+      }
+      callback(defaultLanguage);
+    });
   },
-});
+  init: () => {},
+  cacheUserLanguage: language => {
+    setUserLanguage(language);
+  },
+};
 
-export default i18n;
+i18next
+  .use(languageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    compatibilityJSON: 'v3',
+    react: {
+      useSuspense: false,
+    },
+    interpolation: {
+      escapeValue: false,
+    },
+  });

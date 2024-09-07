@@ -23,5 +23,8 @@
   "darkMode": "Dark mode",
   "language": "Language",
   "backTitle": "Back",
-  "addDeviceTitle": "Add device"
+  "addDeviceTitle": "Add device",
+  "rejectPermissionLocation": "Please grant location permission",
+  "requestConnectWifi":"Please connect to wifi or grant location permission",
+  "passwordWifi": "Please enter the password wifi!"
 }

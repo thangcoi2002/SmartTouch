@@ -1,16 +1,13 @@
 import {Text, View} from 'react-native';
 import {styles} from './styles';
-import {RootState} from '~/redux/reducers/rootReducer';
-import {useSelector} from 'react-redux';
 import {Image} from 'react-native';
 import {darkTheme, lightTheme} from '~/constants/colors';
 import React from 'react';
 import {linkImage} from '~/utils/linkImage';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 
 const HeaderEditProfile: React.FC = () => {
-  const {darkMode, currentUser} = useSelector(
-    (state: RootState) => state.appReducer,
-  );
+  const {darkMode, currentUser} = useSelectorApp();
 
   return (
     <View

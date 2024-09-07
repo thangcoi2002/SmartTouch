@@ -3,8 +3,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {linkImage} from '~/utils/linkImage';
 import colors, {darkTheme, lightTheme} from '~/constants/colors';
-import {useSelector} from 'react-redux';
-import {RootState} from '~/redux/reducers/rootReducer';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 
 interface HeaderBackProps {
   title?: string;
@@ -12,7 +11,7 @@ interface HeaderBackProps {
 
 const HeaderBack: React.FC<HeaderBackProps> = ({title}) => {
   const navigation = useNavigation();
-  const {darkMode} = useSelector((state: RootState) => state.appReducer);
+  const {darkMode} = useSelectorApp();
 
   const goBack = () => {
     navigation.goBack();

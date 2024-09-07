@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
-import {useSelector} from 'react-redux';
 import TextCustom from '~/components/TextCustom';
-import {RootState} from '~/redux/reducers/rootReducer';
+import {useSelectorApp} from '~/redux/slices/app.slice';
 import {User} from '~/redux/types';
 
 const BodyEditProfile: React.FC = () => {
   const {t} = useTranslation();
-  const {currentUser} = useSelector((state: RootState) => state.appReducer);
+  const {currentUser} = useSelectorApp();
 
   const [data, setData] = useState<User>({
     id: currentUser?.id || null,

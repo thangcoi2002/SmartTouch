@@ -9,20 +9,20 @@ import VectorIcon from '~/components/VectorIcon';
 import {styles} from './styles';
 import {linkImage} from '~/utils/linkImage';
 import {User} from '~/redux/types';
-import {useDispatch} from 'react-redux';
-import {setCurrentUser} from '~/redux/action/appActions';
-import {updateLocalStorage} from '~/constants/LocalStorage';
 import {useTranslation} from 'react-i18next';
+import {signIn} from '~/redux/slices/app.slice';
+import {useAppDispatch} from '~/redux/store';
 
 const LoginScreen = () => {
   const {t} = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [data, setData] = useState({
     userName: '',
     password: '',
   });
 
   const onChangeText = (name: string, text: string) => {
+    console.log(text);
     setData({...data, [name]: text});
   };
 
@@ -78,8 +78,7 @@ const LoginScreen = () => {
       password: '',
     };
 
-    dispatch(setCurrentUser(userData));
-    updateLocalStorage({key: 'appInfo', value: {currentUser: userData}});
+    dispatch(signIn(userData));
   };
 
   return (

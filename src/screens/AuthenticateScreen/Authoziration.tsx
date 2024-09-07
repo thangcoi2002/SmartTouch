@@ -29,9 +29,7 @@ const Authenticate = () => {
             styles.btnToggle,
             {
               backgroundColor:
-                toggleScreen === 0
-                  ? colors.mainColor
-                  : colors.darkGrayOpacity,
+                toggleScreen === 0 ? colors.mainColor : colors.darkGrayOpacity,
             },
           ]}
           onPress={() => setToggleScreen(0)}>
@@ -47,9 +45,7 @@ const Authenticate = () => {
             styles.btnToggle,
             {
               backgroundColor:
-                toggleScreen === 1
-                  ? colors.mainColor
-                  : colors.darkGrayOpacity,
+                toggleScreen === 1 ? colors.mainColor : colors.darkGrayOpacity,
             },
           ]}
           onPress={() => setToggleScreen(1)}>
