@@ -1,8 +1,14 @@
-import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {useCallback, useState} from 'react';
+import {
+  NavigationProp,
+  RouteProp,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
+import {useCallback, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {
   Alert,
+  AppState,
   Linking,
   Platform,
   SafeAreaView,
@@ -14,8 +20,20 @@ import {
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import VectorIcon from '~/components/VectorIcon';
 import {getWifiSSID} from '~/modules/WifiModule';
-import {RootStackParamList} from '~/navigation';
+import {RootStackParamList, ScreenName} from '~/navigation';
 import {styles} from './styles';
+
+type CreateDetailRouteProp = RouteProp<
+  RootStackParamList,
+  ScreenName.CreateDetail
+>;
+
+type AppStateStatus =
+  | 'active'
+  | 'background'
+  | 'inactive'
+  | 'unknown'
+  | 'extension';
 
 interface WifiInfo {
   ssid: string;
@@ -24,6 +42,10 @@ interface WifiInfo {
 
 const CreateDetail = () => {
   const {t} = useTranslation();
+  const {params} = useRoute<CreateDetailRouteProp>();
+  const [appState, setAppState] = useState<AppStateStatus>(
+    AppState.currentState as AppStateStatus,
+  );
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [valueWifi, setValueWifi] = useState<WifiInfo>({
     ssid: '',

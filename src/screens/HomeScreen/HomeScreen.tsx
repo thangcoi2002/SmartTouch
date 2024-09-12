@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {useDispatch} from 'react-redux';
 import {darkTheme, lightTheme} from '~/constants/colors';
 import {useSelectorApp} from '~/redux/slices/app.slice';
 
 const HomeScreen = () => {
+  const dispatch = useDispatch();
   const {darkMode} = useSelectorApp();
 
   return (
