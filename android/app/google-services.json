@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "413862035546",
+    "project_id": "smart-touch-a805e",
+    "storage_bucket": "smart-touch-a805e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413862035546:android:8a25a5b397f12194669863",
+        "android_client_info": {
+          "package_name": "com.smarttouch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUVSTZAqv3bWwM4n7cVCKo-hCQqaQJ9-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
