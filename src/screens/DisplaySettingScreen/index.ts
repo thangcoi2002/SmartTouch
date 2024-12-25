@@ -1,1 +1,1 @@
-export {default} from './DisplaySettingScreen'
+export {default} from './DisplaySettingScreen';

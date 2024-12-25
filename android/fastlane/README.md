@@ -15,14 +15,6 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Android
 
-### android alpha
-
-```sh
-[bundle exec] fastlane android alpha
-```
-
-
-
 ### android build_apk_with_debug_keystore
 
 ```sh

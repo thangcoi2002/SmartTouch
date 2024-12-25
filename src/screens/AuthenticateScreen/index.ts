@@ -1,1 +1,1 @@
-export {default} from './Authoziration'
+export {default} from './Authoziration';
