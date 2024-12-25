@@ -1,0 +1,24 @@
+default_platform :android
+
+platform :android do
+  lane :build_apk_with_debug_keystore do |options|
+    build_gradle = File.read('../app/build.gradle').gsub(/(?<=versionCode )\d+/, options[:version_code])
+    build_gradle = build_gradle.gsub(/(?<=versionName ")[0-9\.]+/, options[:version_name])
+
+    File.write('../app/build.gradle', build_gradle)
+
+    gradle(
+      task: "app:assemble",
+      build_type: "Release",
+      properties: {
+        "MYAPP_RELEASE_STORE_FILE" => "my-upload-key.keystore",
+        "MYAPP_RELEASE_STORE_PASSWORD" => "pass123",
+        "MYAPP_RELEASE_KEY_ALIAS" => "my-key-alias",
+        "MYAPP_RELEASE_KEY_PASSWORD" => "pass123"
+      }
+    )
+    # check the output: app/build/outputs/apk/release/
+
+  end
+
+end

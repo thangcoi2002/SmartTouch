@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleProp, TextStyle } from 'react-native';
+import {Platform, StyleProp, TextStyle} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -23,7 +23,7 @@ interface VectorIconProps {
   style?: StyleProp<TextStyle>;
 }
 
-const IonVectorIcon: React.FC<VectorIconProps> = (props) => {
+const IonVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <Ionicons
       name={Platform.OS === 'ios' ? `ios-${props.name}` : `md-${props.name}`}
@@ -32,9 +32,9 @@ const IonVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const OctIcon: React.FC<VectorIconProps> = (props) => {
+const OctIcon: React.FC<VectorIconProps> = props => {
   return (
     <Octicons
       name={props.name}
@@ -43,9 +43,9 @@ const OctIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const SimpleLineIcon: React.FC<VectorIconProps> = (props) => {
+const SimpleLineIcon: React.FC<VectorIconProps> = props => {
   return (
     <SimpleLineIcons
       name={props.name}
@@ -54,9 +54,9 @@ const SimpleLineIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const MaterialVectorIcon: React.FC<VectorIconProps> = (props) => {
+const MaterialVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <MaterialIcons
       name={props.name}
@@ -65,9 +65,9 @@ const MaterialVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const MaterialCommunityVectorIcon: React.FC<VectorIconProps> = (props) => {
+const MaterialCommunityVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <MaterialCommunityIcons
       name={props.name}
@@ -76,9 +76,9 @@ const MaterialCommunityVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const AntDesignVectorIcon: React.FC<VectorIconProps> = (props) => {
+const AntDesignVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <AntDesign
       name={props.name}
@@ -87,9 +87,9 @@ const AntDesignVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const FontAwesomeVectorIcon: React.FC<VectorIconProps> = (props) => {
+const FontAwesomeVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <FontAwesome
       name={props.name}
@@ -98,9 +98,9 @@ const FontAwesomeVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const FontAwesome5VectorIcon: React.FC<VectorIconProps> = (props) => {
+const FontAwesome5VectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <FontAwesome5
       name={props.name}
@@ -109,9 +109,9 @@ const FontAwesome5VectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const EntypoVectorIcon: React.FC<VectorIconProps> = (props) => {
+const EntypoVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <Entypo
       name={props.name}
@@ -120,9 +120,9 @@ const EntypoVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const ZocialVectorIcon: React.FC<VectorIconProps> = (props) => {
+const ZocialVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <Zocial
       name={props.name}
@@ -131,9 +131,9 @@ const ZocialVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const FontistoVectorIcon: React.FC<VectorIconProps> = (props) => {
+const FontistoVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <Fontisto
       name={props.name}
@@ -142,9 +142,9 @@ const FontistoVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const FeatherVectorIcon: React.FC<VectorIconProps> = (props) => {
+const FeatherVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <Feather
       name={props.name}
@@ -153,9 +153,9 @@ const FeatherVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const EvilIconsVectorIcon: React.FC<VectorIconProps> = (props) => {
+const EvilIconsVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <EvilIcons
       name={props.name}
@@ -164,9 +164,9 @@ const EvilIconsVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
-const FoundationVectorIcon: React.FC<VectorIconProps> = (props) => {
+const FoundationVectorIcon: React.FC<VectorIconProps> = props => {
   return (
     <Foundation
       name={props.name}
@@ -175,7 +175,7 @@ const FoundationVectorIcon: React.FC<VectorIconProps> = (props) => {
       color={props.color || colors.darkBlue}
     />
   );
-}
+};
 
 export default {
   IonVectorIcon,

@@ -1,17 +1,25 @@
-/**
- * @format
- */
+import React, {useState} from 'react';
+import {Text, Button, View} from 'react-native';
+import {render, fireEvent} from '@testing-library/react-native';
 
-import 'react-native';
-import React from 'react';
-import App from '../App';
+const TestComponent = () => {
+  const [text, setText] = useState('Hello, World!');
 
-// Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
+  return (
+    <View>
+      <Text>{text}</Text>
+      <Button title="Change Text" onPress={() => setText('Text Changed!')} />
+    </View>
+  );
+};
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+test('renders initial text and updates text on button press', () => {
+  const {getByText} = render(<TestComponent />);
 
-it('renders correctly', () => {
-  renderer.create(<App />);
+  expect(getByText('Hello, World!')).toBeTruthy();
+
+  const button = getByText('Change Text');
+  fireEvent.press(button);
+
+  expect(getByText('Text Changed!')).toBeTruthy();
 });
